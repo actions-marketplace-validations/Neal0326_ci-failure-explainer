@@ -1,5 +1,5 @@
 name: CI Failure Explainer
-description: Analyze failed GitHub Actions jobs with OpenAI and publish a concise explanation.
+description: Explain failed GitHub Actions jobs with AI and post root-cause summaries to pull requests or job summaries.
 author: OpenAI Codex
 
 inputs:
@@ -27,5 +27,5 @@ runs:
   main: dist/index.js
 
 branding:
-  color: red
+  color: orange
   icon: alert-circle

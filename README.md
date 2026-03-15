@@ -8,7 +8,7 @@
   <img src="https://img.shields.io/badge/GitHub-Marketplace-blue" alt="GitHub Marketplace badge">
   <img src="https://img.shields.io/badge/CI-GitHub%20Actions-orange" alt="CI badge">
   <img src="https://img.shields.io/badge/AI-OpenAI-green" alt="AI badge">
-  <img src="https://img.shields.io/github/stars/YOUR_GITHUB_USERNAME_OR_ORG/ci-failure-explainer" alt="GitHub stars badge">
+  <img src="https://img.shields.io/github/stars/Neal0326/ci-failure-explainer" alt="GitHub stars badge">
 </p>
 
 <h3 align="center">Stop reading CI logs. Let AI explain the failure.</h3>
@@ -78,10 +78,10 @@ explain-failure:
     actions: read
     contents: read
     pull-requests: write
-    issues: write
+      issues: write
   steps:
     - name: Explain CI failure
-      uses: your-org/ci-failure-explainer@v1
+      uses: Neal0326/ci-failure-explainer@v1
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         openai-api-key: ${{ secrets.OPENAI_API_KEY }}
@@ -171,7 +171,7 @@ jobs:
       issues: write
     steps:
       - name: Explain CI failure
-        uses: your-org/ci-failure-explainer@v1
+        uses: Neal0326/ci-failure-explainer@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           openai-api-key: ${{ secrets.OPENAI_API_KEY }}
