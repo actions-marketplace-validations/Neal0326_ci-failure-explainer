@@ -1,0 +1,31 @@
+name: CI Failure Explainer
+description: Analyze failed GitHub Actions jobs with OpenAI and publish a concise explanation.
+author: OpenAI Codex
+
+inputs:
+  github-token:
+    description: GitHub token used to read workflow jobs/logs and post PR comments.
+    required: true
+  openai-api-key:
+    description: OpenAI API key used to generate the failure explanation.
+    required: false
+  model:
+    description: OpenAI model to use for the explanation.
+    required: false
+    default: gpt-4.1-mini
+
+outputs:
+  analysis-status:
+    description: Whether AI analysis succeeded, fell back to a static explanation, or was skipped.
+  failed-job-count:
+    description: Number of failed jobs detected in the current workflow run.
+  pull-request-commented:
+    description: Whether the action successfully posted or updated a pull request comment.
+
+runs:
+  using: node20
+  main: dist/index.js
+
+branding:
+  color: red
+  icon: alert-circle
